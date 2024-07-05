@@ -1,3 +1,4 @@
+
 public class HolaMundo { /* clase, cabecera que es donde se define, modificador publico para permitir llamarlo en cualquier parte, palabra reservada clase para
 indicar que es una clase, el nombre y su cuerpo*/
 
@@ -30,6 +31,7 @@ indicar que es una clase, el nombre y su cuerpo*/
         /* de la clase system se puede invocar el atributo estatico out, es un atributo estatico ya que se llama de manera directa sin tener que instanciar la clase system
         tambien out es del tipo printStream que nos permite imprimir en la consola */
         // PrintLn es imprimir en una linea de la consola, recibe  como parametro lo que sea que queremos imprimirr
+
         System.out.println("Hola Mundo"); // SIEMPRE TERMINA EN ' ; '
         // Datos de salida, imprimir en la pantalla o terminal
     }
@@ -39,3 +41,4 @@ indicar que es una clase, el nombre y su cuerpo*/
 // que contiene el codigo binario, no es 100% binario, es propio de la JVM y lo interpreta la misma, este pseudocodigo se le conoce como byteCode, y esta a un nivel intermedio entre el codigo fuente que
 // interpretamos nosotros y tambien entre los binarios, solo lo interpreta la JVM y lo hace atravez del compilador JIT (Just In Time), Cuando la JVM ejecuta el .class es ahi cuando se interpreta
 // y se convierte este bytecode a 0 y 1 para que finalmente pueda ser ejecutado en codigo binario interpretado por la maquina
+
