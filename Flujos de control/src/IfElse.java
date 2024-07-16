@@ -8,7 +8,7 @@ public class IfElse {
 
         if ( promedio >= 6.5 ) { // Nos permite modificar el flujo de nuestra aplicacion
             System.out.println("Felicitaciones, excelente promedio");
-        } else { // El if y el else son bloques excluyentes, es decir, nunca se van a ej1ecutar los dos a la vez, uno o el otro
+        } else { // El if y el else son bloques excluyentes, es decir, nunca se van a ejecutar los dos a la vez, uno o el otro
             System.out.println("Necesitas esforzarte un poco mas");
         }
 
