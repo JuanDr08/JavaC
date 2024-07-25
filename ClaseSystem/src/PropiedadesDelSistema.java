@@ -7,6 +7,8 @@ public class PropiedadesDelSistema {
         // Basicamente la clase system en java nos permite acceder a distintas variables de entorno del sistema, como puden ser rutas de directorios
         // versiones del java, el sistema operativo, etc...
 
+        // La clase system solo contiene metodos estaticos, y esta diseñada para que no se pueda instanciar con el operador new y tampoco se puede hacer una clase que extienda de ella, una subclase
+
         // Para conocer las distintas proopiedades a las que podemos acceder podemos dirigirnos a la siguiente pagina
         // https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
 
