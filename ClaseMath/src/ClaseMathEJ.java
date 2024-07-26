@@ -36,6 +36,22 @@ public class ClaseMathEJ {
         double potencia = Math.pow(10, 3); // Recibe dos argumentos, el primero es el numero que será tomado como la base, y el segundo será el valor al cual será elevado, en este caso será 10 elevado a la 3
         System.out.println("potencia = " + potencia);
 
+        double raiz = Math.sqrt(5); // Nos permite calcular la raiz cuadrada del argumento que le pasemos
+        System.out.println("raiz = " + raiz);
+
+        double grados = Math.toDegrees(1.57); // Nos permite convertir de radianes a grados
+        System.out.println("grados = " + grados);
+
+        double radians = Math.toRadians(90.00); // Nos permite convertir de grados a radianes, el argumento que recibe debe ser un tipo double
+        System.out.println("radians = " + radians);
+
+        System.out.println("sin(90): " + Math.sin(radians)); // Calcular el seno de algo cuyo valor este en radianes, es decir, el argumento debe ser un double y debe estar en radianes, no en grados
+        // por lo tanto esto nos dará el seno de 90 grados, pero esos 90 grados estan en radianes porque en la variable radians convertimos los 90 a radianes
+        System.out.println("cos(90): " + Math.cos(radians)); // Igual que el seno pero calcula el coseno
+
+        radians = Math.toRadians(180);// 180 grados a radianes
+        System.out.println("cos(180): " + Math.cos(radians));
+
     }
 
 }
