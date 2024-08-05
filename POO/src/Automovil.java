@@ -4,6 +4,7 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
     String fabricante; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
     String modelo; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
     String color = "gris"; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con un valor por defecto " gris "
+    int capacidadTanque = 40;
     double cilindrada; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
 
     // - Para la creacion de los metodos tenemos que seguir una estructura para definirlos,
@@ -55,6 +56,22 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
         // le pasaremos el argumento que recibe este metodo llamado acelerarFrenar
         String frenar = this.frenar();
         return acelerar + "\n" + frenar; // retornamos una concatenacion de ambos resultados
+    }
+
+    // En este ejemplo de sobrecarga de metodos estamos aplicando el principio de encapsulamiento, el cual dice que todos los detalles de como funciona esta clase no son visibles para las demas clases que llaman
+    // a los metodos, es decir, una clase que instancie esta misma clase Automovil y quiera usar los metodos calcularConsumo, unicamente sabrá que existe un metodo calcularConsumo, mas sin embargo nunca sabrá
+    // el como funciona este metodo por debajo, ni que existen dos metodos con sobrecarga y que uno recibe otro tipo de parametros y asi, en este archivo si son visibles, pero desde otras partes y desde otras
+    // clases que los llamen no podran saber que hace el metodo por debajo, solo lo ejecutan
+
+    // Este principio suele ser confundido con el de visibilidad, el cual si estipula la privatizacion de las variables de la clase, con los metodos private, public, etc...
+
+    public float calcularConsumo(int km, float porcentajeBencina) { // Metodo publico, que devuelve un flotante, y recibe dos parametros, uno de tipo entero y otro de tipo flotante
+        return km / (this.capacidadTanque * porcentajeBencina); // retorna un flotante
+    }
+
+    public float calcularConsumo(int km, int porcentajeBencina) { // Declaramos un mismo metodo con mismo nombre, lo unico que cambia es el tipo de parametros que recibe y el proceso que ejecuta
+        // Esto es conocido como la sobrecarga del metodo, en donde existe un mismo metodo con mismo nombre pero que recibe parametros distintos y ejecuta procesos similares pero de distinta manera
+        return km / (this.capacidadTanque * (porcentajeBencina / 100f));
     }
 
 }

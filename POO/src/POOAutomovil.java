@@ -17,6 +17,12 @@ public class POOAutomovil {
 
         System.out.println(auto.acelerarFrenar(4000));
 
+        System.out.println("Kilometros por litro " + auto.calcularConsumo(300, 0.6f)); // El metodo requiere de dos argumentos, cada uno con su respectivo tipo especificado en el metodo dentro
+        // de la clase, por lo que le pasamos algunos valores que cumplen con su tipo especificado
+
+        System.out.println("Kilometros por litro " + auto.calcularConsumo(300, 60));  // Llamamos al mismo metodo pero al que se le aplica sobrecarga, pasandole como parametro el otro tipo
+        // de dato que puede recibir el metodo
+
     }
 
 }
