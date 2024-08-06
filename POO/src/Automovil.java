@@ -1,11 +1,18 @@
 public class Automovil { // Nuestra primera clase, por lo que no le pondremos el metodo main, porque es una clase entidad, la cual representa datos
     // tiene caracteristicas y metodos, representa los datos de la aplicacion, por lo que llevara atributos
 
-    String fabricante; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
-    String modelo; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
-    String color = "gris"; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con un valor por defecto " gris "
-    int capacidadTanque = 40;
-    double cilindrada; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
+    // El principio de ocultacion o visibilidad establece que todas o la mayoria de las propiedades o atributos dentro de una clase deben ser privadas, y que la unica forma de acceder a ellos
+    // sea para modificarlos o leer su valor sea mediante metodos, esto para que ninguna otra clase externa que la llame tenga la posibilidad de acceder directamente a sus atributos, sino que
+    // le toque a traves de metodos
+    // Para esto simplemente utilizamos el modificador private al principio de toda declaracion de variable
+    // Como antes teniamos estas propiedades publicas y en el archivo POOAutomovil accediamos directamente, nos toca crear metodos que nos permitan trabajar con estos atributos, y en ese
+    // archivo ir a modificar la forma en la que accedemos a estos atributos
+
+    private String fabricante; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
+    private String modelo; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
+    private String color = "gris"; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con un valor por defecto " gris "
+    private int capacidadTanque = 40;
+    private double cilindrada; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
 
     // - Para la creacion de los metodos tenemos que seguir una estructura para definirlos,
     // - primero va su modificador de acceso, el cual por el momento
@@ -14,6 +21,52 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
     //   usamos la palabra reservada " void ", la cual indica que el metodo no devolvera nada y es mas para ejecutar un proceso
     // - Seguido va el nombre del metodo con parentesis, dentro de estos parentesis van los parametros o argumentos del metodo, los cuales definen
     //   los datos que este metodo recibira
+
+    public String getFabricante() { // Creamos el metodo para leer el valor de los atributos
+        return this.fabricante;
+    }
+
+    public void setFabricante(String fabricante) { // Creamos el metodo para modificar el valor de los atributos privados
+        // es void porque no necesitamos retornar algo, sino que solo ejecutaremos un proceso
+        this.fabricante = fabricante;
+    }
+
+    public String getModelo() { // Creamos el metodo para leer el valor de los atributos
+        return this.modelo;
+    }
+
+    public void setModelo(String modelo) { // Creamos el metodo para modificar el valor de los atributos privados
+        // es void porque no necesitamos retornar algo, sino que solo ejecutaremos un proceso
+        this.modelo = modelo;
+    }
+
+    public String getColor() { // Creamos el metodo para leer el valor de los atributos
+        return this.color;
+    }
+
+    public void setColor(String color) { // Creamos el metodo para modificar el valor de los atributos privados
+        // es void porque no necesitamos retornar algo, sino que solo ejecutaremos un proceso
+        this.color = color;
+    }
+
+    public int getCapacidadTanque() { // Creamos el metodo para leer el valor de los atributos
+        return this.capacidadTanque;
+    }
+
+    public void setCapacidadTanque(int capacidadTanque) { // Creamos el metodo para modificar el valor de los atributos privados
+        // es void porque no necesitamos retornar algo, sino que solo ejecutaremos un proceso
+        this.capacidadTanque = capacidadTanque;
+    }
+
+    public double getCilindrada() { // Creamos el metodo para leer el valor de los atributos
+        return this.cilindrada;
+    }
+
+    public void setCilindrada(double cilindrada) { // Creamos el metodo para modificar el valor de los atributos privados
+        // es void porque no necesitamos retornar algo, sino que solo ejecutaremos un proceso
+        this.cilindrada = cilindrada;
+    }
+
     public void detalle() {// metodos de la clase, le pertenecen al objeto mismo, se inicializan de manera publica
 
         // Para el ejmplo esta bien que imprima todos los atributos, pero por lo general es mejor practica que los metodos retornen cosas, para poder
@@ -33,7 +86,7 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
 
         StringBuilder sb = new StringBuilder(); // Utilizamos stringbuilder para concatenar strings
         sb.append(this.fabricante);
-        sb.append("\n"+ this.modelo);
+        sb.append("\n"+ this.modelo); // Aunque los atributos estan estipulados como privados, al ser propios de la clase, nos permite el acceso libre a ellos, pero por fuera si es restringido
         sb.append("\n"+ this.color);
         sb.append("\n"+ this.cilindrada);
 

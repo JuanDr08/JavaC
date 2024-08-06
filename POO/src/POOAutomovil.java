@@ -4,10 +4,13 @@ public class POOAutomovil {
 
         Automovil auto = new Automovil(); // Instanciamos la clase Automovil que hemos creado
 
-        auto.fabricante = "Toyota"; // Accedemos a uno de los metodos de la clase y le asignamos un valor
-        auto.modelo = "Corolla";
-        auto.color = "Rojo";
-        auto.cilindrada = 1.6;
+        // Al haber cambiado los atributos a privados dentro de la clase Automovil nos toco modificar la forma en la que accediamos a estos atributos desde esta clase, ahora nos toca usar los metodos
+        // que fueron creados para modificar dichos atributos
+
+        auto.setFabricante("Toyota"); // auto.fabricante = "Toyota" Accedemos a uno de los metodos de la clase y le asignamos un valor
+        auto.setModelo("Corolla");
+        auto.setColor("Rojo");
+        auto.setCilindrada(1.6);
 
         auto.detalle(); // Accedemos a uno de los metodos de la clase
         System.out.println(auto.detalleRetorno()); // como este metodo retorna datos, si queremos ver lo que retorna entonces deberemos imprimirlo}
