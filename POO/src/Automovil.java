@@ -1,6 +1,36 @@
 public class Automovil { // Nuestra primera clase, por lo que no le pondremos el metodo main, porque es una clase entidad, la cual representa datos
     // tiene caracteristicas y metodos, representa los datos de la aplicacion, por lo que llevara atributos
 
+    // Por defecto los constructores suelen venir siempre publicos, un constructor es como un metodo especial que basicamente lo que hace es inicializar los atributos nada mas se instancia la clase,
+    // realizar un proceso recien se inicia la clase, o directamente inicializar la case, ya sea sin atributos iniciados o con atributos iniciados, para esto, el constructor pide parametros, los cuales
+    // son los que nosotros necesitemos para crear el objeto, dichos parametros se los pasamos durante la instanciacion de la clase
+    public Automovil(String fabricante, String modelo) { // Para crear el constructor debe llevar el mismo nombre que el de la clase, este pide dos parametros de tipo string ambos
+
+        // Cuando se instacia la clase el constructor lee los parametros que se le pasaron y los asigna a los atributos instantaneamente
+        this.fabricante = fabricante; // agarra el parametro ' fabricante ' y lo asigna al atributo fabricante
+        this.modelo = modelo; // agarra el parametro ' modelo ' y lo asigna al atributo modelo
+
+    }
+
+    // Para el constructor tambien aplica la sobrecarga, es decir, que se pueden crear varios constructores con diferentes argumentos, que reciban cosas distintas, puede ser uno para recibir un tipo de dato
+    // e iniciarlo o puede haber uno para cuando no se le pasa ningun dato y que unicamente inicie el objeto
+    public Automovil(){ // Solo inicia la clase, pero no realiza ningun proceso
+
+    }
+
+    public Automovil (String fabricante, String modelo, String color, float cilindrada){
+
+        // Para ahorrar codigo podemos llamar a otros constructores que ejecutan una secuencia de codigo que necesitemos repetir, por ejemplo en este caso necesitamos instanciar 4 atributos, 2 de los cuales
+        // ya los hace otro constructor mas arriba, pero para ahorrar codigo podemos hacerlo de la siguiente manera
+        this(fabricante, modelo); // De esta manera llamamos a un constructor que este dentro de la clase, esto no genera una nueva instancia sino que se reutiliza a si mismo, le pasamos los parametros
+        // que necesita para ejecutarse y con esto ya habremos declarado las dos cosas en una sola linea, y esto llamando y utilizando a un constructor que ya existia
+
+        // y ya podremos seguir declarando el resto de propiedades
+        this.color = color;
+        this.cilindrada = cilindrada;
+
+    }
+
     // El principio de ocultacion o visibilidad establece que todas o la mayoria de las propiedades o atributos dentro de una clase deben ser privadas, y que la unica forma de acceder a ellos
     // sea para modificarlos o leer su valor sea mediante metodos, esto para que ninguna otra clase externa que la llame tenga la posibilidad de acceder directamente a sus atributos, sino que
     // le toque a traves de metodos

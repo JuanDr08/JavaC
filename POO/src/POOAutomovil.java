@@ -2,13 +2,16 @@ public class POOAutomovil {
 
     public static void main(String[] args) {
 
-        Automovil auto = new Automovil(); // Instanciamos la clase Automovil que hemos creado
+        Automovil auto = new Automovil("Toyota", "Corolla"); // Instanciamos la clase Automovil que hemos creado, y en esta manera tambien llamamos automaticament
 
         // Al haber cambiado los atributos a privados dentro de la clase Automovil nos toco modificar la forma en la que accediamos a estos atributos desde esta clase, ahora nos toca usar los metodos
         // que fueron creados para modificar dichos atributos
 
-        auto.setFabricante("Toyota"); // auto.fabricante = "Toyota" Accedemos a uno de los metodos de la clase y le asignamos un valor
-        auto.setModelo("Corolla");
+        // Al haber creado un constructor en la clase Automovil ya no hara falto definir algunos atributos de la manera en que lo haciamos, sino que los definimos en la instanciacion de la clase, osea,
+        // en los parentesis cuando recien se declara
+
+        // auto.setFabricante("Toyota"); // auto.fabricante = "Toyota" Accedemos a uno de los metodos de la clase y le asignamos un valor
+        // auto.setModelo("Corolla");
         auto.setColor("Rojo");
         auto.setCilindrada(1.6);
 
@@ -25,6 +28,8 @@ public class POOAutomovil {
 
         System.out.println("Kilometros por litro " + auto.calcularConsumo(300, 60));  // Llamamos al mismo metodo pero al que se le aplica sobrecarga, pasandole como parametro el otro tipo
         // de dato que puede recibir el metodo
+
+        Automovil auto2 = new Automovil(); // creamos un auto usando uno de los constructores sobrecargados
 
     }
 
