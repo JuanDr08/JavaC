@@ -1,6 +1,32 @@
 public class Automovil { // Nuestra primera clase, por lo que no le pondremos el metodo main, porque es una clase entidad, la cual representa datos
     // tiene caracteristicas y metodos, representa los datos de la aplicacion, por lo que llevara atributos
 
+    // El principio de ocultacion o visibilidad establece que todas o la mayoria de las propiedades o atributos dentro de una clase deben ser privadas, y que la unica forma de acceder a ellos
+    // sea para modificarlos o leer su valor sea mediante metodos, esto para que ninguna otra clase externa que la llame tenga la posibilidad de acceder directamente a sus atributos, sino que
+    // le toque a traves de metodos
+    // Para esto simplemente utilizamos el modificador private al principio de toda declaracion de variable
+    // Como antes teniamos estas propiedades publicas y en el archivo POOAutomovil accediamos directamente, nos toca crear metodos que nos permitan trabajar con estos atributos, y en ese
+    // archivo ir a modificar la forma en la que accedemos a estos atributos
+
+    private String fabricante; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
+    private String modelo; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
+    private String color = "gris"; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con un valor por defecto " gris "
+    private int capacidadTanque = 40;
+    private double cilindrada; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
+
+    // Los atributos o modificadores estaticos son de la clase, a diferencia del resto que son del objeto, basicamente indican los atributos o modificadores que son " compartidos " por asi
+    // decirlo, ya que podemos acceder a ellos sin instanciar la clase, simplemente llamando el nombre de la clase y llamando al metodo, no requiere de haber creado una instancia con el new
+    // previamente, solo con algo asi: Automovil.colorPatente
+    static String colorPatente = "Naranja"; // Atributo con el modificador estatico
+
+    // Si hicieramos que el atributo estatico fuera tambien privado, este metodo ya no podria ser accedido de manera directa desde fuera, sino que al igual que con los demas metodos nos
+    // tocaria crear metodos getters y setters para trabajar con los estaticos, pero es importante tener en cuenta lo siguiente, y es que dichos metodos deben ser tambien estaticos,
+    // para poder modificar el atributo estatico los metodos tambien deben ser estaticos
+
+    // Si quisieramos crear un metodo cualquiera de tipo estatic, debemos saber que NO PODREMOS TRABAJAR CON ATRIBUTOS COMUNES, solamente podremos trabajar con mas atributos estaticos
+    // esto debido a que los atributos comunes le pertenecen a las instancias, los estaticos no, le pertenecen a la clase en general, por lo que no podremos usar cosas cono el ' this ',
+    // dentro de un metodo estatico, solo dispondremos de mas metodos estaticos y de lo que se pase por argumento
+
     // Por defecto los constructores suelen venir siempre publicos, un constructor es como un metodo especial que basicamente lo que hace es inicializar los atributos nada mas se instancia la clase,
     // realizar un proceso recien se inicia la clase, o directamente inicializar la case, ya sea sin atributos iniciados o con atributos iniciados, para esto, el constructor pide parametros, los cuales
     // son los que nosotros necesitemos para crear el objeto, dichos parametros se los pasamos durante la instanciacion de la clase
@@ -30,19 +56,6 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
         this.cilindrada = cilindrada;
 
     }
-
-    // El principio de ocultacion o visibilidad establece que todas o la mayoria de las propiedades o atributos dentro de una clase deben ser privadas, y que la unica forma de acceder a ellos
-    // sea para modificarlos o leer su valor sea mediante metodos, esto para que ninguna otra clase externa que la llame tenga la posibilidad de acceder directamente a sus atributos, sino que
-    // le toque a traves de metodos
-    // Para esto simplemente utilizamos el modificador private al principio de toda declaracion de variable
-    // Como antes teniamos estas propiedades publicas y en el archivo POOAutomovil accediamos directamente, nos toca crear metodos que nos permitan trabajar con estos atributos, y en ese
-    // archivo ir a modificar la forma en la que accedemos a estos atributos
-
-    private String fabricante; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
-    private String modelo; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
-    private String color = "gris"; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con un valor por defecto " gris "
-    private int capacidadTanque = 40;
-    private double cilindrada; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
 
     // - Para la creacion de los metodos tenemos que seguir una estructura para definirlos,
     // - primero va su modificador de acceso, el cual por el momento
@@ -108,6 +121,7 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
         System.out.println(this.modelo);
         System.out.println(this.color);
         System.out.println(this.cilindrada);
+        System.out.println(Automovil.colorPatente);
 
     }
 
@@ -116,9 +130,12 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
 
         StringBuilder sb = new StringBuilder(); // Utilizamos stringbuilder para concatenar strings
         sb.append(this.fabricante);
-        sb.append("\n"+ this.modelo); // Aunque los atributos estan estipulados como privados, al ser propios de la clase, nos permite el acceso libre a ellos, pero por fuera si es restringido
-        sb.append("\n"+ this.color);
-        sb.append("\n"+ this.cilindrada);
+        sb.append("\n" + this.modelo); // Aunque los atributos estan estipulados como privados, al ser propios de la clase, nos permite el acceso libre a ellos, pero por fuera si es restringido
+        sb.append("\n" + this.color);
+        sb.append("\n" + this.cilindrada);
+        sb.append("\n" + Automovil.colorPatente); // A diferencia del resto de atributos, los atributos estaticos no pueden ser accedidos con el this, ya que no son atributos del objeto, sino
+        // que son de la clase, por lo que tenemos dos formas de acceder a ellos, 1: con solo el nombre del atributo ' colorPatente ' pero esta solo sirve cuando estmos dentro de la clase
+        // 2: llamando a la clase y posteriormente a su atributo estatico ' Automovil.colorPatente ' donde en este ultimo podemos evidenciar a que se refiere con que es atributo de la clase
 
         return sb.toString(); // return es la palabra reservada que nos permite definir que es lo que se devolverá al finalizar o cuando un metodo se completa
         // debe ser del mismo tipo de dato que se definio en el tipo de retorno en el encabezado de este metodo
@@ -157,4 +174,21 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
         return km / (this.capacidadTanque * (porcentajeBencina / 100f));
     }
 
+
+    /* En el orden de escritura de una clase es preferible seguir el siguiente
+    * - Declaracion de atributos
+    * - Creacion de constructores
+    * - Metodos Setters & Getters
+    * - Metodos tradicionales
+    * - Sobre-escritura de metodos
+    * */
+
+    // La sobre escritura de metodos es basicamente sobre escribir metodos que vienen de clases padres, por ejemplo, todo objeto creado hereda de la clase Object, y esta viene con algunos metodos
+    // por defecto, como el metodo equals() o el metodo toString(), los cuales son metodos que podemos sobre escribir de la siguiente manera
+
+    @Override // Decorador cuya unicafuncion es indicarle a la JVM que este metodo será sobre escrito, aunque no hace falta indicarlo es mejor dejarlo por convencion
+    public boolean equals(Object obj) {
+        return super.equals(obj); // dentro del metodo podemos hacer la operacion que sea que queramos y que retorne eso, y al momento de llamar al metodo especifico de esta clase, lo que se
+        // ejecutara será este nuevo metodo sobre escrit, con nuestras funciones personalizadas
+    }
 }
