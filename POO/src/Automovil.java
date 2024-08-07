@@ -1,3 +1,7 @@
+// Public define que la clase será publica y podra ser llamada en cualquier parte de la aplicacion
+// Private no tendria sentido agregarsela al encabezado de la clase ya que restringiria el acceso a esta clase a cualquier parte de la aplicacion
+// Final basicamente evita la herencia de esta clase, si le agregamos el final al encabezado de la clase, desde otra parte de la aplicacion no podriamos extender de esta clase que tiene el final
+
 public class Automovil { // Nuestra primera clase, por lo que no le pondremos el metodo main, porque es una clase entidad, la cual representa datos
     // tiene caracteristicas y metodos, representa los datos de la aplicacion, por lo que llevara atributos
 
@@ -26,6 +30,17 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
     // Si quisieramos crear un metodo cualquiera de tipo estatic, debemos saber que NO PODREMOS TRABAJAR CON ATRIBUTOS COMUNES, solamente podremos trabajar con mas atributos estaticos
     // esto debido a que los atributos comunes le pertenecen a las instancias, los estaticos no, le pertenecen a la clase en general, por lo que no podremos usar cosas cono el ' this ',
     // dentro de un metodo estatico, solo dispondremos de mas metodos estaticos y de lo que se pase por argumento
+
+    public static final Integer VELOCIDAD_MAXIMA_CARRETERA = 120; // El modificador final basicamente funciona igual que una constante, no permite modificar su valor una vez iniciada la clase
+    // solo permite acciones de lectura, como se puede observar la mayoria de veces suele ir con static, porque no tiene sentido una constante para un unico objeto, puede que hayan casos, pero
+    // la mayoria de veces son constantes que tienen en comun todos los objetos o la clase en general, por lo que se deja static, y tambien se le deja el modificador public, pero tambien
+    // podria ser privado aunque para esto nos tocaria usar getters y eso seria ambiguo por lo que por eso es mejor dejarlo en public, y la nomenclatura es todo en mayuscula y
+    // palabras separadas por guiones bajos
+    // Basicamente y en resumidas cuentas, el final en atributos les da el comportamiento de una constante, su valor nunca podrá ser modificado, solo leido, y una vez se crea la constante
+    // inmediatamente requiere que se le asigne el valor en la misma linea
+    // Ni siquiera dentro de la misma clase se le podra modificar el valor una vez que se le es dado
+    // La unica forma de cambiarle el valor es directamente en el codigo
+    // La palabra final podria hacer alusion a que es el valor final de la variable, por eso no deja cambiarlo
 
     // Por defecto los constructores suelen venir siempre publicos, un constructor es como un metodo especial que basicamente lo que hace es inicializar los atributos nada mas se instancia la clase,
     // realizar un proceso recien se inicia la clase, o directamente inicializar la case, ya sea sin atributos iniciados o con atributos iniciados, para esto, el constructor pide parametros, los cuales
@@ -191,4 +206,5 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
         return super.equals(obj); // dentro del metodo podemos hacer la operacion que sea que queramos y que retorne eso, y al momento de llamar al metodo especifico de esta clase, lo que se
         // ejecutara será este nuevo metodo sobre escrit, con nuestras funciones personalizadas
     }
+
 }
