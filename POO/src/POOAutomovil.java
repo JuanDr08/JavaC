@@ -37,6 +37,12 @@ public class POOAutomovil {
 
         Automovil auto2 = new Automovil(); // creamos un auto usando uno de los constructores sobrecargados
 
+        Automovil enums = new Automovil("Toyota", "Corolla"); // creamos una variable para poner en practica los enums de java
+        enums.setColor(Color.BLANCO); // llamamos al metodo setColor y le pasamos una de las constantes del archivo Color, accediendo a sus valores estaticos por medio de la clase, sin instanciar
+        // nada, el valor de BLANCO es como su mismo nombre indica blanco
+
+        for (Color p : Color.values()) System.out.println(p); // Recorremos todas las constantes que hay en el enum
+
     }
 
 }

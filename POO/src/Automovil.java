@@ -17,6 +17,7 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
     private String color = "gris"; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con un valor por defecto " gris "
     private int capacidadTanque = 40;
     private double cilindrada; // atributos del objeto, le pertenecen al objeto mismo, se inicializan de manera publica y con valores por defecto o nulos
+    private Color colorEnum = Color.AMARILLO; // Atributo de tipo Color, el cual es una clase de tipo enum que contiene el conjunto de constantes con los colores posibles
 
     // Los atributos o modificadores estaticos son de la clase, a diferencia del resto que son del objeto, basicamente indican los atributos o modificadores que son " compartidos " por asi
     // decirlo, ya que podemos acceder a ellos sin instanciar la clase, simplemente llamando el nombre de la clase y llamando al metodo, no requiere de haber creado una instancia con el new
@@ -105,6 +106,11 @@ public class Automovil { // Nuestra primera clase, por lo que no le pondremos el
     public void setColor(String color) { // Creamos el metodo para modificar el valor de los atributos privados
         // es void porque no necesitamos retornar algo, sino que solo ejecutaremos un proceso
         this.color = color;
+    }
+
+    public void setColor(Color color) { // sobrecargamos el metodo de setColor para permitir pasar constantes de tipo Color, las cuales provienen de un archivo de tipo enum que contiene
+        // los colores disponibles en formato de constantes
+        this.colorEnum = color; // El valor que se asigna es la constante que se le pase del archivo Color
     }
 
     public int getCapacidadTanque() { // Creamos el metodo para leer el valor de los atributos
