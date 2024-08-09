@@ -3,11 +3,11 @@ import java.util.Date;
 public class OrdenCompra {
 
     public static int actIdentifier;
-    private int identificador;
+    private final int identificador = ++actIdentifier;
     private String descripcion;
     private Date fecha;
     private Cliente cliente;
-    private Producto productos[] = new Producto[4];
+    private final Producto[] productos = new Producto[4];
     private int indiceProducto;
 
     public OrdenCompra(String descripcion) {
@@ -44,15 +44,17 @@ public class OrdenCompra {
         return productos;
     }
 
-    public void addProducto(Producto producto) {
+    public OrdenCompra addProducto(Producto producto) {
         this.productos[indiceProducto++] = producto;
+        return this;
     }
 
     public double granTotal() {
-        /*double total = 0;
+        double total = 0;
         for (Producto prdt : this.productos){
-            total += prdt;
-        }*/
+            total += prdt.getPrecio();
+        }
+        return total;
     }
 
 }
