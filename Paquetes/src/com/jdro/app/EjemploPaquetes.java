@@ -63,7 +63,17 @@ public class EjemploPaquetes {
         * - Importamos una vez y ya podemos seguir usandola en todo el archivo donde se importo
         * */
 
-        Gato g = new Gato();
+        Gato g = new Gato(); // Clase importada con el asterisco en los packages
+
+        // ClaseDefault cd = new ClaseDefault();  Esta clase no nos deja instanciarla, por la sencilla razon de que es una clase default y estamos parados
+        // sobre una clase en un package distinto al que contiene la clase que queremos instanciar, por lo que no podremos acceder a ella desde aca, pero si accedemos
+        // desde por ejemplo la clase Persona si nos lo permitirá
+
+        AtributosDefault ad = new AtributosDefault();
+
+        ad.atributoDefault = "hola"; // Como se puede ver, nos marca error al tratar de acceder al atributo default desde una clase que es externa al package de la clase que contiene el atributo
+        // pero si se es usado dentro de una clase que este dentro del mismo package si nos lo permitiria hacer, como se puede observar en ClaseDefautl
+        ad.atributoPublico = "hola"; // Pero a uno definido como publico si nos deja
 
     }
 
