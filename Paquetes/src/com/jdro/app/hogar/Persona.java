@@ -6,4 +6,10 @@ public class Persona {
     // ClaseDefautl es una clase que fue declarada sin modificador de acceso por lo que se le otorga el default y la restringe solo al alcance del package, por eso
     // la podemos usar en esta clase Persona pero en EjemploPaquetes no
 
+    public static String saludar(){ // Metodo para ejemplificar los imports estaticos, explicado en la clase EjemploPaquetes
+        return "Hola a todos";
+    }
+
+    public static String atributoStatico; // Atributo para ejemplificar los imports estaticos, explicado en la clase EjemploPaquetes
+
 }

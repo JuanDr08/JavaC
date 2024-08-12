@@ -28,6 +28,14 @@ import com.jdro.app.hogar.*; // Si dentro del directorio o paquete tuvieramos va
 // En este caso estamos importando todas las clases que hayan dentro del paquete de ' hogar '
 // En resumidas cuentas el ' * ' es como decir ' todo ', por lo que nos trae todo lo que haya en un directorio
 
+// Con los imports estaticos basicamente lo que podemos hacer es importar metodos estaticos puntuales para ser utilizados sin necesidad de tener
+// que llamar a su clase madre contenedora, para permitir usarlos como si fueran metodos o atributos propios de esta clase, pero estan
+// siendo traidos desde otras clases, ademas, nos acortan la escritura
+// El ' * ' tambien funciona para traernos todos los metodos y atributos estaticos de una clase
+import static com.jdro.app.hogar.Persona.atributoStatico; // traemos un atributo estatico para ser usado de manera corta sin llamar a su clase madre
+import static com.jdro.app.hogar.Persona.saludar; // traemos un metodo estatico para poderlo usar cuando queramos sin tener que llamar a su clase madre
+//import static com.jdro.app.hogar.Persona.*; Se trae todos los estaticos de la clase persona
+
 public class EjemploPaquetes {
 
     public static void main(String[] args) {
@@ -74,6 +82,15 @@ public class EjemploPaquetes {
         ad.atributoDefault = "hola"; // Como se puede ver, nos marca error al tratar de acceder al atributo default desde una clase que es externa al package de la clase que contiene el atributo
         // pero si se es usado dentro de una clase que este dentro del mismo package si nos lo permitiria hacer, como se puede observar en ClaseDefautl
         ad.atributoPublico = "hola"; // Pero a uno definido como publico si nos deja
+
+        Persona.saludar(); // En vez de usar esto llamando a la clase Persona
+        saludar(); // Importamos de manera estatica y lo podemos usar como si fuera un metodo propio de esta clase, sin llamar a la clase madre
+        // Realmente es externo a a esta clase y esta siendo importado desde otro lado
+        // No requiere de llamar a la clase que contiene el metodo
+        Persona.atributoStatico = "Hola"; // En vez de usar la clase persona para llamar al atributo estatico
+        atributoStatico = "Hola"; // Importamos de manera estatica el atributo y lo usamos de manera libre sin tener que llamar a la clase madre
+        // Accedemos al atributo estatico como ' si fuera ' propio de esta clase pero en realidad es externo a ella
+        // esta siendo importado desde otro lado y no requiere de llamar a su clase para usarlo
 
     }
 
