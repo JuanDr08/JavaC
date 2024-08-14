@@ -39,4 +39,22 @@ public class Calculadora {
     // A esto tambien se le puede llegar a llamar polimorfismo, ya que son distintas formas en la que un mismo metodo puede llegar a actuar dependiendo de lo que se le pase, ya que si, todos estos metodos
     // trabajan sobre uno mismo llamado ' sumar ' solo que dependiendo de lo que se le pase, este actua de una u otra manera
 
+
+    // Existe una forma de definir un metodo que pueda recibir una cantidad ilimitada de parametros de un mismo tipo, y es parecido al operador spread de JS
+    // Todos estos parametros que se le sean pasados al metodo serán almacenados en un arreglo con el nombre que le hayamos asignado, y para acceder a ellos deberá ser con un for de toda la vida
+    public int sumar(int... argumentos){ // Definimos que este metodo sobrecargado de sumar puede recibir la cantidad de parametros que le queramos pasar sin limite y que sean del tipo primitivo int
+        // Todos los que se le sean pasados serán guardados en un arreglo llamado argumentos
+        int total = 0;
+        for (int i = 0; i < argumentos.length; i++) total += i;
+        return  total;
+    }
+
+    // Tambien podemos definir mas parametros aparte de el del operador spread, el cual es importante que sea el ultimo en ser definido, y ademas podremos tambien aplicar sobrecarga usando este spread
+    public float sumar(float a, int... argumentos){ // Definimos el metodo sobrecargado sumar, el cual recibe cuantos parametros querramos pasarle, pero el primero de ellos sera requerido como
+        // un float y se almacenará en la variable ' a ', y de ahi en adelante el resto de parametros serán tomados como parte del arreglo al que llamamos ' argumentos '
+        float total = a;
+        for (int i = 0; i < argumentos.length; i++) total += i;
+        return  total;
+    }
+
 }

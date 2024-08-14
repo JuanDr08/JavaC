@@ -29,6 +29,15 @@ public class EjemploSobrecarga {
         // tienen representaciones decimales, osea numeros, por lo que en este caso java lo que hará con este caracter es tomar su valor decimal y usarlo como parametro
         // el valor decimal de la @ es --> 64, por lo que tomara el metodo sobrecargado de doble int y sumara 10 + 64
         System.out.println("sumar int: " + cal.sumar(10F, '@')); // lo mismo que el anterior solo que tomara el de float - int
+
+
+        // Utilizamos los metodos que pueden recibir la cantidad de parametros que le queramos pasar
+        System.out.println("Sumar muchos int: " + cal.sumar(1,2,3,4,5,6,7,8,9)); // Le pasamos los que queramos
+        // y si observamos el codigo, no existe metodo que este definido con que reciba explicitamente 9 parametros
+        System.out.println("Sumar muchos int pero el primero es float: " + cal.sumar(1f,2,3,4,5,6,7,8,9)); // Usamos el metodo
+        // que recibe la cantidad de parametros que le querramos pasar pero que el primero es tomado como un flotante
+        // Si observamos el codigo, no hay metodo definido que reciba explicitamente 9 parametros y que el primero sea float
+
     }
 
 }
