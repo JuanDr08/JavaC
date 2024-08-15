@@ -38,6 +38,9 @@ public class EjemploSobrecarga {
         // que recibe la cantidad de parametros que le querramos pasar pero que el primero es tomado como un flotante
         // Si observamos el codigo, no hay metodo definido que reciba explicitamente 9 parametros y que el primero sea float
 
+        // Algunos puntos a tener en cuenta es que la sobrecarga tambien se puede aplicar a metodos estaticos, metodos de la clase y no solo del
+        // objet
+
     }
 
 }
